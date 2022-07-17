@@ -10,9 +10,8 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import React, { FC } from "react";
 
-export const Post: FC = () => {
+export function Post() {
   return (
     <Card sx={{ margin: 5 }}>
       <CardHeader
@@ -55,4 +54,4 @@ export const Post: FC = () => {
       </CardActions>
     </Card>
   );
-};
+}

@@ -18,7 +18,7 @@ function App() {
 
   const darkTheme = createTheme({
     palette: {
-      mode: mode,
+      mode,
     },
   });
 
@@ -29,8 +29,8 @@ function App() {
         <Stack direction="row" spacing={2} justifyContent="space-between">
           <Sidebar
             mode={mode}
-            setMode={(mode: PaletteMode) => {
-              setMode(mode);
+            setMode={(modeOption: PaletteMode) => {
+              setMode(modeOption);
             }}
           />
           <Feed />
