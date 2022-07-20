@@ -1,7 +1,8 @@
+import React from "react";
 import { Box } from "@mui/material";
-import { Post } from "./Post";
+import Post from "./Post";
 
-export function Feed() {
+function Feed() {
   return (
     <Box flex={4} p={2}>
       <Post />
@@ -9,3 +10,5 @@ export function Feed() {
     </Box>
   );
 }
+
+export default Feed;

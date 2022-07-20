@@ -1,3 +1,4 @@
+import React from "react";
 import { Favorite, FavoriteBorder, MoreVert, Share } from "@mui/icons-material";
 import {
   Avatar,
@@ -11,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 
-export function Post() {
+function Post() {
   return (
     <Card sx={{ margin: 5 }}>
       <CardHeader
@@ -55,3 +56,5 @@ export function Post() {
     </Card>
   );
 }
+
+export default Post;

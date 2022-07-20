@@ -65,3 +65,7 @@ Configure Prettier
 Configure Husky
 
 [Husky install](https://typicode.github.io/husky/#/?id=install)
+
+Configure Webpack
+
+[Webpack get start](https://webpack.js.org/guides/getting-started/)

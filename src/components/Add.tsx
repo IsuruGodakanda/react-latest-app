@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Add as AddIcon,
   DateRange,
@@ -19,9 +20,8 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
 
-export function Add() {
+function Add() {
   const [open, setOpen] = useState(false);
 
   const StyledModal = styled(Modal)({
@@ -105,3 +105,5 @@ export function Add() {
     </>
   );
 }
+
+export default Add;

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   AccountBox,
   Article,
@@ -24,7 +25,7 @@ interface IProps {
   setMode: (modeOption: PaletteMode) => void;
 }
 
-export function Sidebar(props: IProps) {
+function Sidebar(props: IProps) {
   const { mode, setMode } = props;
 
   return (
@@ -102,3 +103,5 @@ export function Sidebar(props: IProps) {
     </Box>
   );
 }
+
+export default Sidebar;

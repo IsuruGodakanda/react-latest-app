@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Mail, Notifications, Terminal } from "@mui/icons-material";
 import {
   AppBar,
@@ -11,7 +12,6 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -43,7 +43,7 @@ const UserBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-export function Navbar() {
+function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -98,3 +98,5 @@ export function Navbar() {
     </AppBar>
   );
 }
+
+export default Navbar;
