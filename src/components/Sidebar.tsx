@@ -1,3 +1,4 @@
+import React from "react";
 import {
   AccountBox,
   Article,
@@ -18,14 +19,13 @@ import {
   PaletteMode,
   Switch,
 } from "@mui/material";
-import React, { FC } from "react";
 
 interface IProps {
   mode: PaletteMode;
-  setMode: (mode: PaletteMode) => void;
+  setMode: (modeOption: PaletteMode) => void;
 }
 
-export const Sidebar: FC<IProps> = (props: IProps) => {
+function Sidebar(props: IProps) {
   const { mode, setMode } = props;
 
   return (
@@ -94,7 +94,7 @@ export const Sidebar: FC<IProps> = (props: IProps) => {
                 <ModeNight />
               </ListItemIcon>
               <Switch
-                onChange={(e) => setMode(mode === "light" ? "dark" : "light")}
+                onChange={() => setMode(mode === "light" ? "dark" : "light")}
               />
             </ListItemButton>
           </ListItem>
@@ -102,4 +102,6 @@ export const Sidebar: FC<IProps> = (props: IProps) => {
       </Box>
     </Box>
   );
-};
+}
+
+export default Sidebar;

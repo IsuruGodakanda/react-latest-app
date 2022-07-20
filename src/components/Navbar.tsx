@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Mail, Notifications, Terminal } from "@mui/icons-material";
 import {
   AppBar,
@@ -11,7 +12,6 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import React, { FC, useState } from "react";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -43,7 +43,7 @@ const UserBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const Navbar: FC = () => {
+function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -66,10 +66,10 @@ export const Navbar: FC = () => {
           <Avatar
             sx={{ width: "30px", height: "30px" }}
             src="https://avatars.githubusercontent.com/u/25604799?v=4"
-            onClick={(e) => setOpen(true)}
+            onClick={() => setOpen(true)}
           />
         </Icons>
-        <UserBox onClick={(e) => setOpen(true)}>
+        <UserBox onClick={() => setOpen(true)}>
           <Avatar
             sx={{ width: "30px", height: "30px" }}
             src="https://avatars.githubusercontent.com/u/25604799?v=4"
@@ -81,7 +81,7 @@ export const Navbar: FC = () => {
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
         open={open}
-        onClose={(e) => setOpen(false)}
+        onClose={() => setOpen(false)}
         anchorOrigin={{
           vertical: "top",
           horizontal: "right",
@@ -97,4 +97,6 @@ export const Navbar: FC = () => {
       </Menu>
     </AppBar>
   );
-};
+}
+
+export default Navbar;

@@ -44,3 +44,28 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Get started with CRA amd MUI
+
+[CRA install](https://create-react-app.dev/docs/adding-typescript/)
+[MUI get start](https://mui.com/material-ui/getting-started/installation/)
+
+Configure ESLint
+
+[ESLint get start](https://eslint.org/docs/latest/user-guide/getting-started)
+[eslint-config-airbnb-typescript install](https://www.npmjs.com/package/eslint-config-airbnb-typescript)
+
+Configure Prettier
+
+[Prettier get start](https://prettier.io/docs/en/install.html)
+[eslint-config-prettier install](https://www.npmjs.com/package/eslint-config-prettier)
+[eslint-plugin-prettier install](https://www.npmjs.com/package/eslint-plugin-prettier)
+[Prettier extension install in VSCode]
+
+Configure Husky
+
+[Husky install](https://typicode.github.io/husky/#/?id=install)
+
+Configure Webpack
+
+[Webpack get start](https://webpack.js.org/guides/getting-started/)

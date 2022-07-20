@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Avatar,
   AvatarGroup,
@@ -11,9 +12,8 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import React, { FC } from "react";
 
-export const Rightbar: FC = () => {
+function Rightbar() {
   return (
     <Box flex={2} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
       <Box position="fixed" width={300}>
@@ -101,7 +101,7 @@ export const Rightbar: FC = () => {
             <ListItemText
               primary="Brunch this weekend?"
               secondary={
-                <React.Fragment>
+                <>
                   <Typography
                     sx={{ display: "inline" }}
                     component="span"
@@ -111,7 +111,7 @@ export const Rightbar: FC = () => {
                     Ali Connors
                   </Typography>
                   {" — I'll be in your neighborhood doing errands this…"}
-                </React.Fragment>
+                </>
               }
             />
           </ListItem>
@@ -126,7 +126,7 @@ export const Rightbar: FC = () => {
             <ListItemText
               primary="Summer BBQ"
               secondary={
-                <React.Fragment>
+                <>
                   <Typography
                     sx={{ display: "inline" }}
                     component="span"
@@ -136,7 +136,7 @@ export const Rightbar: FC = () => {
                     to Scott, Alex, Jennifer
                   </Typography>
                   {" — Wish I could come, but I'm out of town this…"}
-                </React.Fragment>
+                </>
               }
             />
           </ListItem>
@@ -151,7 +151,7 @@ export const Rightbar: FC = () => {
             <ListItemText
               primary="Oui Oui"
               secondary={
-                <React.Fragment>
+                <>
                   <Typography
                     sx={{ display: "inline" }}
                     component="span"
@@ -161,7 +161,7 @@ export const Rightbar: FC = () => {
                     Sandra Adams
                   </Typography>
                   {" — Do you have Paris recommendations? Have you ever…"}
-                </React.Fragment>
+                </>
               }
             />
           </ListItem>
@@ -169,4 +169,6 @@ export const Rightbar: FC = () => {
       </Box>
     </Box>
   );
-};
+}
+
+export default Rightbar;

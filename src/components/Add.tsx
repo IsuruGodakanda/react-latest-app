@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Add as AddIcon,
   DateRange,
@@ -8,6 +9,7 @@ import {
 } from "@mui/icons-material";
 import {
   Avatar,
+  Box,
   Button,
   ButtonGroup,
   Fab,
@@ -18,10 +20,8 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
-import React, { FC, useState } from "react";
 
-export const Add: FC = () => {
+function Add() {
   const [open, setOpen] = useState(false);
 
   const StyledModal = styled(Modal)({
@@ -30,7 +30,7 @@ export const Add: FC = () => {
     justifyContent: "center",
   });
 
-  const UserBox = styled(Box)(({ theme }) => ({
+  const UserBox = styled(Box)(() => ({
     display: "flex",
     alignItems: "center",
     gap: "10px",
@@ -46,7 +46,7 @@ export const Add: FC = () => {
           bottom: 20,
           left: { xs: "calc(50% - 25px)", md: 30 },
         }}
-        onClick={(e) => setOpen(true)}
+        onClick={() => setOpen(true)}
       >
         <Fab color="primary" aria-label="add">
           <AddIcon />
@@ -54,7 +54,7 @@ export const Add: FC = () => {
       </Tooltip>
       <StyledModal
         open={open}
-        onClose={(e) => setOpen(false)}
+        onClose={() => setOpen(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -104,4 +104,6 @@ export const Add: FC = () => {
       </StyledModal>
     </>
   );
-};
+}
+
+export default Add;
