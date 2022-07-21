@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Mail, Notifications, Terminal } from "@mui/icons-material";
+import { Mail, ModeNight, Notifications, Terminal } from "@mui/icons-material";
 import {
   AppBar,
   Avatar,
@@ -8,55 +8,28 @@ import {
   InputBase,
   Menu,
   MenuItem,
-  styled,
+  Switch,
   Toolbar,
   Typography,
 } from "@mui/material";
-
-const StyledToolbar = styled(Toolbar)({
-  display: "flex",
-  justifyContent: "space-between",
-});
-
-const Search = styled("div")(({ theme }) => ({
-  backgroundColor: "white",
-  padding: "0 10px",
-  borderRadius: theme.shape.borderRadius,
-  width: "40%",
-}));
-
-const Icons = styled(Box)(({ theme }) => ({
-  display: "none",
-  alignItems: "center",
-  gap: "20px",
-  [theme.breakpoints.up("sm")]: {
-    display: "flex",
-  },
-}));
-
-const UserBox = styled(Box)(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  gap: "10px",
-  [theme.breakpoints.up("sm")]: {
-    display: "none",
-  },
-}));
+import useDarkMode from "../hooks/useDarkMode";
 
 function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+
+  const [colorTheme, setTheme] = useDarkMode();
 
   return (
     <AppBar position="sticky">
-      <StyledToolbar>
+      <Toolbar className="flex justify-between">
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
           REACT LATEST
         </Typography>
         <Terminal sx={{ display: { xs: "block", sm: "none" } }} />
-        <Search>
+        <div className="bg-white py-0 px-2.5 rounded-lg w-2/5">
           <InputBase placeholder="Search..." />
-        </Search>
-        <Icons>
+        </div>
+        <Box className="hidden items-center gap-2.5 sm:flex">
           <Badge badgeContent={4} color="error">
             <Mail />
           </Badge>
@@ -68,15 +41,18 @@ function Navbar() {
             src="https://avatars.githubusercontent.com/u/25604799?v=4"
             onClick={() => setOpen(true)}
           />
-        </Icons>
-        <UserBox onClick={() => setOpen(true)}>
+        </Box>
+        <Box
+          className="flex items-center gap-2.5 sm:hidden"
+          onClick={() => setOpen(true)}
+        >
           <Avatar
             sx={{ width: "30px", height: "30px" }}
             src="https://avatars.githubusercontent.com/u/25604799?v=4"
           />
           <Typography>Isuru</Typography>
-        </UserBox>
-      </StyledToolbar>
+        </Box>
+      </Toolbar>
       <Menu
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
@@ -94,6 +70,13 @@ function Navbar() {
         <MenuItem>Profile</MenuItem>
         <MenuItem>My account</MenuItem>
         <MenuItem>Logout</MenuItem>
+        <MenuItem>
+          <ModeNight />
+          <Switch
+            onChange={() => setTheme(colorTheme)}
+            checked={colorTheme === "light"}
+          />
+        </MenuItem>
       </Menu>
     </AppBar>
   );

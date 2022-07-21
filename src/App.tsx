@@ -1,45 +1,17 @@
-import React, { useState } from "react";
-import {
-  Box,
-  createTheme,
-  PaletteMode,
-  Stack,
-  ThemeProvider,
-} from "@mui/material";
-
-import { theme } from "./theme";
-import Add from "./components/Add";
-import Feed from "./components/Feed";
+import React from "react";
+import { Box, Typography } from "@mui/material";
 import Navbar from "./components/Navbar";
-import Rightbar from "./components/Rightbar";
-import Sidebar from "./components/Sidebar";
 
 function App() {
-  const [mode, setMode] = useState<PaletteMode>("light");
-
-  const darkTheme = createTheme({
-    palette: {
-      mode,
-    },
-  });
-
   return (
-    <ThemeProvider theme={{ ...theme, ...darkTheme }}>
-      <Box bgcolor="background.default" color="text.primary">
-        <Navbar />
-        <Stack direction="row" spacing={2} justifyContent="space-between">
-          <Sidebar
-            mode={mode}
-            setMode={(modeOption: PaletteMode) => {
-              setMode(modeOption);
-            }}
-          />
-          <Feed />
-          <Rightbar />
-        </Stack>
-        <Add />
+    <Box className="h-screen">
+      <Navbar />
+      <Box className="flex items-center justify-center min-h-screen dark:bg-black">
+        <Typography variant="h4" className="text-blue-600 dark:text-white">
+          React dark mode with TailwindCSS
+        </Typography>
       </Box>
-    </ThemeProvider>
+    </Box>
   );
 }
 
