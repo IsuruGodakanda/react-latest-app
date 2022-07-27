@@ -17,6 +17,11 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-react", "@babel/preset-typescript"],
+            plugins: [
+              ["styled-components"],
+              ["babel-plugin-twin", { debug: false }],
+              "babel-plugin-macros",
+            ],
           },
         },
       },
@@ -26,7 +31,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,

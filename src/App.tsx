@@ -1,45 +1,23 @@
-import React, { useState } from "react";
-import {
-  Box,
-  createTheme,
-  PaletteMode,
-  Stack,
-  ThemeProvider,
-} from "@mui/material";
-
-import { theme } from "./theme";
-import Add from "./components/Add";
-import Feed from "./components/Feed";
-import Navbar from "./components/Navbar";
-import Rightbar from "./components/Rightbar";
-import Sidebar from "./components/Sidebar";
+import React from "react";
+import { Box, Switch, Typography } from "@mui/material";
+import { ModeNight } from "@mui/icons-material";
+import useDarkMode from "./hooks/useDarkMode";
+import { AppContainer, AppTitle } from "./AppStyles";
 
 function App() {
-  const [mode, setMode] = useState<PaletteMode>("light");
-
-  const darkTheme = createTheme({
-    palette: {
-      mode,
-    },
-  });
+  const [colorTheme, setTheme] = useDarkMode();
 
   return (
-    <ThemeProvider theme={{ ...theme, ...darkTheme }}>
-      <Box bgcolor="background.default" color="text.primary">
-        <Navbar />
-        <Stack direction="row" spacing={2} justifyContent="space-between">
-          <Sidebar
-            mode={mode}
-            setMode={(modeOption: PaletteMode) => {
-              setMode(modeOption);
-            }}
-          />
-          <Feed />
-          <Rightbar />
-        </Stack>
-        <Add />
-      </Box>
-    </ThemeProvider>
+    <Box>
+      <Switch
+        onChange={() => setTheme(colorTheme)}
+        checked={colorTheme === "light"}
+      />
+      <AppContainer>
+        <AppTitle variant="h4">React dark mode with TailwindCSS</AppTitle>
+      </AppContainer>
+      <ModeNight />
+    </Box>
   );
 }
 
