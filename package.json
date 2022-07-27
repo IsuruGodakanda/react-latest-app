@@ -7,15 +7,15 @@
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "serve": "yarn remove:build && yarn build && serve dist",
     "remove:build": "rm -rf dist",
+    "clean:project": "rm -rf node_modules dist && yarn",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.3",
-    "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
-    "@mui/material": "^5.9.0",
+    "@mui/material": "^5.9.1",
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -25,6 +25,8 @@
     "@types/react-dom": "^18.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5",
+    "twin.macro": "^2.8.2",
     "typescript": "^4.7.4"
   },
   "devDependencies": {
@@ -35,6 +37,8 @@
     "@typescript-eslint/parser": "^5.30.7",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
+    "babel-plugin-styled-components": "^2.0.7",
+    "babel-plugin-twin": "^1.0.2",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.12",
     "csv-loader": "^3.0.3",
@@ -77,5 +81,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "babelMacros": {
+    "twin": {
+      "styled": {
+        "import": "default",
+        "from": "styled-components"
+      }
+    }
+  },
+  "resolutions": {
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
   }
 }

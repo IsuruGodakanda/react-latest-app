@@ -73,3 +73,8 @@ Configure Webpack
 Configure Tailwind
 
 [Tailwind install](https://tailwindcss.com/docs/installation)
+
+Remove emotion and Configure styled-components with twin.macro
+
+[Install styled-components with Material-UI](https://mui.com/material-ui/guides/styled-engine/)
+[Configure twin.macro](https://www.npmjs.com/package/twin.macro)

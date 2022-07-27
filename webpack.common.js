@@ -17,6 +17,11 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-react", "@babel/preset-typescript"],
+            plugins: [
+              ["styled-components"],
+              ["babel-plugin-twin", { debug: false }],
+              "babel-plugin-macros",
+            ],
           },
         },
       },
